@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "figtree";
+  src: url(../../assets/fonts/Figtree-VariableFont_wght.ttf);
+}
+
+$font: "figtree", sans-serif;
+
+$white: rgb(255, 255, 255);
+$grey: rgb(128, 128, 128);
+$black: rgb(18, 18, 18);
+$yellow: rgb(244, 208, 78);
+
+$breakpoints: (
+  "phone-down": 320px,
+  "phone-middle": 375px,
+  "phone-large": 425px,
+  "tablet-up": 768px,
+  "tablet-down": 900px,
+  "desktop-up": 1024px,
+  "desktop-down": 1440px,
+  "widescreen-up": 2560px,
+);
+
+@mixin media-max($_key) {
+  @media screen and (min-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}
